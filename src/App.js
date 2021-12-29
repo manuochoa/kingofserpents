@@ -82,26 +82,33 @@ function App() {
       );
 
       let publicSaleTime = await basiliskMinting.publicSaleStarts();
-      let receipt;
+      let result;
 
       if (Date.now() > publicSaleTime * 1000) {
-        receipt = await basiliskMinting.publicSaleMint("1", {
+        result = await basiliskMinting.publicSaleMint("1", {
           value: ethers.utils.parseUnits("0.05"),
+          gasLimit: 200000,
         });
       } else {
-        receipt = await basiliskMinting.preSaleMint("1", {
+        result = await basiliskMinting.preSaleMint("1", {
           value: ethers.utils.parseUnits("0.05"),
+          gasLimit: 200000,
         });
       }
 
-      console.log(receipt);
+      const receipt = await result.wait();
+
+      if (receipt) {
+        console.log(receipt);
+        setIsLoading(false);
+      }
     } catch (error) {
       if (error.error.message) {
         window.alert(error.error.message);
       }
       console.log({ error });
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {
