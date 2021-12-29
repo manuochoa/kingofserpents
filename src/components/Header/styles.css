@@ -1,0 +1,38 @@
+.navbar .navbar-collapse .navbar-nav a {
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.navbar .navbar-collapse .navbar-nav.socials a {
+    padding: 0;
+    margin-left: 10px;
+}
+
+.nav-logo-md {
+    display: none;
+}
+
+.navbar .socials {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .nav-logo-md {
+        display: block;
+    }
+    .nav-logo-lg {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar .navbar-collapse .navbar-nav a {
+        padding: 0 10px;
+    }
+}

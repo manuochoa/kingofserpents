@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: '8Bit';
+  src: local('8Bit'), url(fonts/8-bit-wonder.TTF) format('truetype');
+}
+
+@font-face {
+  font-family: 'Pixellari';
+  src: local('Pixellari'), url(fonts/Pixellari.ttf) format('truetype');
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Customize Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #43454b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c3e42;
+}
+/* Customize Scrollbar End */
+
+button:focus {
+  box-shadow: none !important;
+}
+
+.button-primary {
+  font-family: 'Pixellari';
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 2px solid #FFFFFF !important;
+  box-sizing: border-box !important;
+  border-radius: 5px !important;
+  padding: 10px 25px 7px 25px;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+ .social {
+  background-color: white;
+  width: 31px;
+  height: 31px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social svg {
+  color: black;
+}
+
+.main-section {
+  background: url("assets/images/main-img.png") no-repeat center center;
+  background-size: cover;
+  height: 700px;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0) 0%, #030305 100%);
+}
+
+.overlay-2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0) 0%, #030305 69.79%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.main-section .title {
+  font-family: '8Bit';
+  color: #2658AC;
+  font-size: 60px;
+  text-shadow: 1px 6px #0a3e9b;
+  text-transform: uppercase;
+}
+
+.info-card h6 {
+  text-transform: uppercase;
+}
+
+.info-card img {
+  width: 100%;
+}
+
+.info-card p {
+  font-size: 13px;
+  color: #A2A5BE;
+  font-weight: 700;
+}
+
+.info-card .badge {
+  background-color: #00B6FF !important;
+  color: #000 !important;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.info-card .team-social {
+  background-color: #00B6FF;
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-card .team-social a {
+  color: black;
+}
+
+.section-title {
+  font-family: '8Bit';
+  color: #00B6FF;
+  margin-top: -11px;
+}
+
+.badge-1 {
+  background-color: #23D9C3 !important;
+  color: black;
+  font-size: 15px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.badge-secondary-color {
+  background-color: #FF7373 !important;
+}
+
+.badge-primary-color {
+ background-color: #00B6FF !important;
+}
+
+.badge-light-color {
+  background-color: #fff !important;
+  color: #000;
+}
+
+.community-section {
+  background: url("assets/images/community-section-img.png") no-repeat center center;
+  background-size: cover;
+}
+
+.community-card {
+  background: rgba(3, 3, 5, 0.5);
+  border-radius: 5px;
+}
+
+.community-card h1 {
+  font-family: '8Bit';
+  color: #00B6FF;
+  font-size: 24px;
+}
+
+.roadmap-section .phase {
+  border-left: 3px solid grey;
+  padding-left: 60px;
+}
+
+.roadmap-section .phase p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .main-section .title {
+    font-size: 25px;
+    text-shadow: 1px 3px #0a3e9b;
+  }
+  .community-card h1 {
+    font-size: 15px;
+  }
+
+  .community-card .button-primary {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
