@@ -20,6 +20,7 @@ import leadDevPfp from "./assets/images/team/lead-dev.png";
 import animatorPfp from "./assets/images/team/animator.png";
 import directorPfp from "./assets/images/team/creative-director.png";
 import managerPfp from "./assets/images/team/community-manager.png";
+import { toast } from "react-toastify";
 
 function App() {
   const [userAddress, setUserAddress] = useState("");
@@ -101,10 +102,11 @@ function App() {
       if (receipt) {
         console.log(receipt);
         setIsLoading(false);
+        toast.success("Minting Succesful!!");
       }
     } catch (error) {
       if (error.error.message) {
-        window.alert(error.error.message);
+        toast.error(error.error.message);
       }
       console.log({ error });
       setIsLoading(false);
