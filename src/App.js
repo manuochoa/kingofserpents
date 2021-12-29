@@ -88,12 +88,12 @@ function App() {
 
       if (Date.now() > publicSaleTime * 1000) {
         result = await basiliskMinting.publicSaleMint("1", {
-          value: ethers.utils.parseUnits("0.05"),
+          value: ethers.utils.parseUnits("0.069"),
           gasLimit: 200000,
         });
       } else {
         result = await basiliskMinting.preSaleMint("1", {
-          value: ethers.utils.parseUnits("0.05"),
+          value: ethers.utils.parseUnits("0.069"),
           gasLimit: 200000,
         });
       }
