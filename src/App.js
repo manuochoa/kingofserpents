@@ -23,6 +23,7 @@ import managerPfp from "./assets/images/team/community-manager.png";
 
 function App() {
   const [userAddress, setUserAddress] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const connectWallet = async () => {
     console.log("hola");
@@ -65,6 +66,7 @@ function App() {
   };
 
   const mint = async () => {
+    setIsLoading(true);
     try {
       let provider = new ethers.providers.Web3Provider(window.ethereum);
       let signer = provider.getSigner(0);
@@ -99,6 +101,7 @@ function App() {
       }
       console.log({ error });
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -156,10 +159,15 @@ function App() {
               King Of <br /> Serpentz
             </h1>
             <Button
+              disabled={isLoading}
               onClick={userAddress ? () => mint() : () => connectWallet()}
               className="button-primary"
             >
-              {userAddress ? "Mint" : "Connect Wallet"}
+              {isLoading
+                ? "Minting..."
+                : userAddress
+                ? "Mint"
+                : "Connect Wallet"}
             </Button>
           </div>
         </div>
