@@ -25,6 +25,7 @@ import { toast } from "react-toastify";
 function App() {
   const [userAddress, setUserAddress] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const contractAddress = "0xE2D1Ef34fF23d6D937677c3d79EB910E0fdbcb49";
 
   const connectWallet = async () => {
     console.log("hola");
@@ -40,10 +41,10 @@ function App() {
         method: "eth_chainId",
       });
 
-      if (chainId !== "0x4") {
+      if (chainId !== "0x1") {
         await window.ethereum.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x4" }],
+          params: [{ chainId: "0x1" }],
         });
       }
 
@@ -72,7 +73,7 @@ function App() {
       let provider = new ethers.providers.Web3Provider(window.ethereum);
       let signer = provider.getSigner(0);
       let basiliskMinting = new ethers.Contract(
-        "0xbA81E4dEc239e45563299a587B5d6E5aF5f96E86",
+        contractAddress,
         [
           "function publicSaleMint(uint256 _amount) public payable",
           "function preSaleMint(uint256 _amount) public payable",
