@@ -25,7 +25,10 @@ import { toast } from "react-toastify";
 function App() {
   const [userAddress, setUserAddress] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const contractAddress = "0xE2D1Ef34fF23d6D937677c3d79EB910E0fdbcb49";
+  // MAINNET
+  // const contractAddress = "0xE2D1Ef34fF23d6D937677c3d79EB910E0fdbcb49";
+  // TESTNET
+  const contractAddress = "0xbA81E4dEc239e45563299a587B5d6E5aF5f96E86";
 
   const connectWallet = async () => {
     console.log("hola");
@@ -37,16 +40,16 @@ function App() {
 
       window.localStorage.setItem("userAddress", accounts[0]);
 
-      const chainId = await window.ethereum.request({
-        method: "eth_chainId",
-      });
+      // const chainId = await window.ethereum.request({
+      //   method: "eth_chainId",
+      // });
 
-      if (chainId !== "0x1") {
-        await window.ethereum.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x1" }],
-        });
-      }
+      // if (chainId !== "0x1") {
+      //   await window.ethereum.request({
+      //     method: "wallet_switchEthereumChain",
+      //     params: [{ chainId: "0x1" }],
+      //   });
+      // }
 
       window.ethereum.on("accountsChanged", function (accounts) {
         setUserAddress(accounts[0]);
